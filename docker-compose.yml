@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hailatdev/express_docker:latest
+    container_name: express_docker_container
+    command: sh -c "npm run dev"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+
+volumes:
+  src:
